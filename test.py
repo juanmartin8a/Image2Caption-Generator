@@ -39,8 +39,8 @@ def generate_desc(model, tokenizer, photo, max_length):
 	return in_text
 
 tokenizer = load(open('tokenizer.pkl', 'rb'))
-max_length = 34
-model = load_model('checkpoint/model-ep003-loss3.391-val_loss3.755.h5')
+max_length = 37
+model = load_model('checkpoint/model.h5')
 photo = extract_features('Flicker8k_Dataset/667626_18933d713e.jpg')
 description = generate_desc(model, tokenizer, photo, max_length)
 print(description)
