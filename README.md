@@ -14,11 +14,11 @@ The model used for the decoder was trained Google Colab's free tier which limite
 The dataset used to train the decoder model was the Flicker 8k dataset.
 
 ## Model Workflow
-  1. ## Feature Extraction
-      The input image is loaded and resized to 299x299. It is then preprocessed and passed through the pre-trained Xception model to extract the image embedding, which serve as the foundation for generating the image description.
+  1. ## Image Pre-Processing and Feature Extraction
+      The input image is loaded and resized to 299x299. It is then pre-processed and passed through the pre-trained Xception CNN model to extract the image embedding, which is the foundation for generating the image description.
     
    2. ## Inference
-      Using the extracted image features and the loaded tokenizer, the model predicts the next word in the caption. Starting with an empty string, the model appends one word at a time to build a complete description until it reaches the maximum length or encounters an end token.
+      Using the extracted image features and the loaded tokenizer, the RNN model predicts the next word in the caption. Starting with an empty string, the model appends one word at a time to build a complete description until it reaches the maximum length or encounters an end token.
 
 ## How to use
 
