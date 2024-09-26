@@ -24,7 +24,7 @@ def word_for_id(integer, tokenizer):
 	return None
 
 def generate_desc(model, tokenizer, photo, max_length):
-	in_text = 'start'
+	in_text = ''
 	for _ in range(max_length):
 		sequence = tokenizer.texts_to_sequences([in_text])[0]
 		sequence = pad_sequences([sequence], maxlen=max_length)
@@ -33,14 +33,19 @@ def generate_desc(model, tokenizer, photo, max_length):
 		word = word_for_id(yhat, tokenizer)
 		if word is None:
 			break
-		in_text += ' ' + word
 		if word == 'end':
 			break
+		if in_text == '':
+			in_text = word
+		else:
+			in_text += ' ' + word
+
 	return in_text
 
 tokenizer = load(open('tokenizer.pkl', 'rb'))
 max_length = 37
-model = load_model('checkpoint/model.h5')
-photo = extract_features('Flicker8k_Dataset/667626_18933d713e.jpg')
+model = load_model('weigths/model.h5')
+path_to_picture = input('Path to picture: ')
+photo = extract_features(path_to_picture)
 description = generate_desc(model, tokenizer, photo, max_length)
 print(description)
