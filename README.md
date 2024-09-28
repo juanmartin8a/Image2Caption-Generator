@@ -11,7 +11,7 @@ The model uses an encoder-decoder architecture:
 The model used for the decoder was trained in Google Colab's free tier which limited the amount of time and compute power used.
 
 ## Dataset
-The dataset used to train the decoder model was the Flicker 8k dataset.
+The dataset used to train the decoder model was the [Flicker 8k dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k).
 
 ## Model Workflow
   1. ## Image Pre-Processing and Feature Extraction
