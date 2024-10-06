@@ -1,4 +1,7 @@
 # Image to Caption Generator
+![Started](https://img.shields.io/badge/Started-Jan%202021-blue%20green.svg)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-Jan%202021-blue.svg?color=informational)
+
 This Artificial Neural Network (ANN) can generate a text description for a given image :0
 
 ## Model
